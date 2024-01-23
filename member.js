@@ -1,12 +1,11 @@
 function skillsMember() {
-    var member = document.getElementById("member");
-    var skills = document.getElementById("skills");
-    var projects = document.getElementById("projects");
-    var contact = document.getElementById("contact");
-    var about = document.getElementById("about");
-    member.style.display = "block";
-    skills.style.display = "none";
-    projects.style.display = "none";
-    contact.style.display = "none";
-    about.style.display = "none";
+  const memberSkills = document.querySelectorAll('.member__skill');
+  memberSkills.forEach((skill) => {
+    const skillValue = skill.querySelector('.member__skill-value');
+    const skillBar = skill.querySelector('.member__skill-bar');
+    const skillBarValue = skillBar.querySelector('.member__skill-bar-value');
+    const skillBarValueWidth = skillBarValue.offsetWidth;
+    const skillBarValueWidthValue = skillBarValueWidth * (skillValue.innerHTML / 100);
+    skillBarValue.style.width = `${skillBarValueWidthValue}px`;
+  });
 }
